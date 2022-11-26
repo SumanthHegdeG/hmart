@@ -32,9 +32,9 @@ app.get('/api/config/paypal', (req, res) => res.send(process.env.PAYPAL_CLIENT_I
 
 const __dirname = path.resolve()
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
-app.use('/', (req, res, next) => {
-  res.send(`<h1>Port is running </h1>`)
-})
+// app.use('/', (req, res, next) => {
+//   res.send(`<h1>Port is running </h1>`)
+// })
 app.use(express.static(path.join(__dirname, '/build')))
 
 app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'build', 'index.html')))
