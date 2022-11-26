@@ -38,9 +38,9 @@ app.use('/', (req, res, next) => {
 app.use(express.static(path.join(__dirname, '/build')))
 
 app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'build', 'index.html')))
-app.use('/', (req, res) => {
-  res.send('<h1>Running</h1>')
-})
+// app.use('/', (req, res) => {
+//   res.send('<h1>Running</h1>')
+// })
 app.use(notFound)
 app.use(errorHandler)
 
